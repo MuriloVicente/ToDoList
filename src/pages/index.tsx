@@ -5,8 +5,7 @@ import { Item } from "@/types/Item"
 
 export default function Home() {
   const [list, setList] = useState<Item[]>([
-    { id: 1, name: 'Comprar pão', done: false },
-    { id: 2, name: 'Ir a academia', done: false }
+    
   ])
 
   const handleAddTask = (taskName: string) => {
@@ -25,7 +24,7 @@ export default function Home() {
       h-screen
     `}>
       <div className="m-auto max-w-5xl text-white p-3">
-        <h1 className="text-center text-5xl font-semibold border-b-[1px] border-[#444] pb-5">
+        <h1 className="text-center text-5xl font-semibold border-b-[1px] border-slate-700 pb-5">
           Lista de Tarefas
         </h1>
         
