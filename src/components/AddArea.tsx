@@ -15,7 +15,7 @@ export default function AddArea({ onEnter }: Props) {
     }
 
     return (
-        <div className="border border-slate-700 rounded-lg p-3 my-5 flex">
+        <div className="border border-slate-700 rounded-lg p-3 my-5 flex mx-4 md:mx-0">
             <span className="mr-2">➕</span>
             <input
                 type="text"

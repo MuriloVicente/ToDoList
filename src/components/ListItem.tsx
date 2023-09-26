@@ -1,12 +1,23 @@
 import { Item } from "@/types/Item"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 type Props = {
     item: Item
+    onTaskDone: (taskId: number, isDone: boolean) => void
 }
 
-export default function ListItem({ item }: Props) {
+export default function ListItem({ item, onTaskDone }: Props) {
     const [isCkecked, setIsChecked] = useState(item.done)
+
+    useEffect(() => {
+        setIsChecked(item.done)
+    }, [item.done])
+
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const isChecked = e.target.checked
+        setIsChecked(isChecked)
+        onTaskDone(item.id, isChecked)
+    }
 
     return (
         <div className={`
@@ -15,14 +26,18 @@ export default function ListItem({ item }: Props) {
             p-3
             mb-3
             rounded-lg
+            mx-4 md:mx-0
+            shadow-sm shadow-zinc-600
+            bg-gradient-to-r from-slate-800 to-slate-600
         `}>
             <input className="w-6 h-6 mr-3"
                 type="checkbox"
                 checked={isCkecked}
-                onChange={e => setIsChecked(e.target.checked)} />
+                onChange={handleCheckboxChange} />
             <label className={`
                 text-slate-300 ${isCkecked ? 'line-through' : ''}
-            `}>{item.name}</label>
+            `}>{item.name}
+            </label>
         </div>
     )
 }
