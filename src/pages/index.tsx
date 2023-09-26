@@ -51,7 +51,7 @@ export default function Home() {
         <AddArea onEnter={handleAddTask} />
 
         {list.map((item, index) => (
-          <div>
+          <div key={index}>
             <ListItem key={index} item={item} onTaskDone={handleTaskDone} />
           </div>
         ))}
