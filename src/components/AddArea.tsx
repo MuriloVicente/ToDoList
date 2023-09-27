@@ -23,7 +23,12 @@ export default function AddArea({ onEnter }: Props) {
                 className="bg-transparent outline-none flex-1 text-lg"
                 value={inputText}
                 onChange={e => setInputText(e.target.value)}
-                onKeyUp={handleKeyUp} />
+                onKeyUp={handleKeyUp}
+                onKeyUpCapture={(e) => {
+                    if (e.key === 'Enter')
+                        e.preventDefault() // Evita a quebra de linha no input
+                }}
+            />
         </div>
     )
 }
