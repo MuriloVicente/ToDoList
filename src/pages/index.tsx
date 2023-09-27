@@ -69,7 +69,7 @@ export default function Home() {
         <h1 className={`
           text-center font-semibold 
           border-b-[1px] border-slate-700 
-          pb-5 mb-16
+          pb-5 mb-12
           text-4xl
         `}>
           Lista de Tarefas

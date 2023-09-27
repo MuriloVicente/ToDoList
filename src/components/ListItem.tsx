@@ -9,7 +9,7 @@ type Props = {
 
 
 export default function ListItem({ item, onTaskDone }: Props) {
-    
+
     // Define um estado local "isCkecked" para controlar o estado de seleção da tarefa.
     const [isCkecked, setIsChecked] = useState(item.done)
 
@@ -34,7 +34,6 @@ export default function ListItem({ item, onTaskDone }: Props) {
             mb-3
             rounded-lg
             mx-4 md:mx-0
-            shadow-sm shadow-zinc-600
             bg-gradient-to-r from-slate-800 to-slate-700
         `}>
             {/* Renderiza uma caixa de seleção (checkbox) para marcar a tarefa como concluída ou não. */}
